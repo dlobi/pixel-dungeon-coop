@@ -4,6 +4,7 @@ import xyz.dlobi.noosa.Camera;
 import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.ui.Archs;
 import xyz.dlobi.pixeldungeoncoop.ui.ExitButton;
+import xyz.dlobi.pixeldungeoncoop.windows.WndLobby;
 
 public class LobbyScene extends PixelScene {
 
@@ -19,6 +20,10 @@ public class LobbyScene extends PixelScene {
         Archs archs = new Archs();
         archs.setSize( w, h );
         add( archs );
+
+        WndLobby lobbyWindow = new WndLobby();
+        lobbyWindow.select( 0 );
+        add(lobbyWindow);
 
         ExitButton btnExit = new ExitButton();
         btnExit.setPos( Camera.main.width - btnExit.width(), 0 );
