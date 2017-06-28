@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 import xyz.dlobi.pixeldungeoncoop.Badges;
 import xyz.dlobi.pixeldungeoncoop.Dungeon;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.actors.Char;
 import xyz.dlobi.pixeldungeoncoop.actors.buffs.Buff;
 import xyz.dlobi.pixeldungeoncoop.actors.hero.Hero;
@@ -127,7 +127,7 @@ public class Ring extends EquipableItem {
 			final Ring r1 = hero.belongings.ring1;
 			final Ring r2 = hero.belongings.ring2;
 			
-			PixelDungeon.scene().add( 
+			PixelDungeonCoop.scene().add(
 				new WndOptions( TXT_UNEQUIP_TITLE, TXT_UNEQUIP_MESSAGE, 
 					Utils.capitalize( r1.toString() ), 
 					Utils.capitalize( r2.toString() ) ) {

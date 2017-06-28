@@ -33,95 +33,12 @@ import xyz.dlobi.pixeldungeoncoop.scenes.GameScene;
 import xyz.dlobi.pixeldungeoncoop.scenes.PixelScene;
 import xyz.dlobi.pixeldungeoncoop.scenes.TitleScene;
 
-public class PixelDungeon extends Game {
-	
-	public PixelDungeon() {
+public class PixelDungeonCoop extends Game {
+
+	public PixelDungeonCoop() {
 		super( TitleScene.class );
-		
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.scrolls.ScrollOfUpgrade.class, 
-			"xyz.dlobi.pixeldungeoncoop.items.scrolls.ScrollOfEnhancement" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.actors.blobs.WaterOfHealth.class, 
-			"xyz.dlobi.pixeldungeoncoop.actors.blobs.Light" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.rings.RingOfMending.class, 
-			"xyz.dlobi.pixeldungeoncoop.items.rings.RingOfRejuvenation" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.wands.WandOfReach.class, 
-			"xyz.dlobi.pixeldungeoncoop.items.wands.WandOfTelekenesis" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.actors.blobs.Foliage.class, 
-			"xyz.dlobi.pixeldungeoncoop.actors.blobs.Blooming" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.actors.buffs.Shadows.class, 
-			"xyz.dlobi.pixeldungeoncoop.actors.buffs.Rejuvenation" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.scrolls.ScrollOfPsionicBlast.class, 
-			"xyz.dlobi.pixeldungeoncoop.items.scrolls.ScrollOfNuclearBlast" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.actors.hero.Hero.class, 
-			"xyz.dlobi.pixeldungeoncoop.actors.Hero" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.actors.mobs.npcs.Shopkeeper.class,
-			"xyz.dlobi.pixeldungeoncoop.actors.mobs.Shopkeeper" );
-		// 1.6.1
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.quest.DriedRose.class,
-			"xyz.dlobi.pixeldungeoncoop.items.DriedRose" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.actors.mobs.npcs.MirrorImage.class,
-			"xyz.dlobi.pixeldungeoncoop.items.scrolls.ScrollOfMirrorImage$MirrorImage" );
-		// 1.6.4
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.rings.RingOfElements.class,
-			"xyz.dlobi.pixeldungeoncoop.items.rings.RingOfCleansing" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.rings.RingOfElements.class,
-			"xyz.dlobi.pixeldungeoncoop.items.rings.RingOfResistance" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.weapon.missiles.Boomerang.class,
-			"xyz.dlobi.pixeldungeoncoop.items.weapon.missiles.RangersBoomerang" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.rings.RingOfPower.class,
-			"xyz.dlobi.pixeldungeoncoop.items.rings.RingOfEnergy" );
-		// 1.7.2
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.plants.Dreamweed.class,
-			"xyz.dlobi.pixeldungeoncoop.plants.Blindweed" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.plants.Dreamweed.Seed.class,
-			"xyz.dlobi.pixeldungeoncoop.plants.Blindweed$Seed" );
-		// 1.7.4
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.weapon.enchantments.Shock.class,
-			"xyz.dlobi.pixeldungeoncoop.items.weapon.enchantments.Piercing" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.weapon.enchantments.Shock.class,
-			"xyz.dlobi.pixeldungeoncoop.items.weapon.enchantments.Swing" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.scrolls.ScrollOfEnchantment.class,
-			"xyz.dlobi.pixeldungeoncoop.items.scrolls.ScrollOfWeaponUpgrade" );
-		// 1.7.5
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.scrolls.ScrollOfEnchantment.class,
-			"xyz.dlobi.pixeldungeoncoop.items.Stylus" );
-		// 1.8.0
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.actors.mobs.FetidRat.class,
-			"xyz.dlobi.pixeldungeoncoop.actors.mobs.npcs.Ghost$FetidRat" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.plants.Rotberry.class,
-			"xyz.dlobi.pixeldungeoncoop.actors.mobs.npcs.Wandmaker$Rotberry" );
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.plants.Rotberry.Seed.class,
-			"xyz.dlobi.pixeldungeoncoop.actors.mobs.npcs.Wandmaker$Rotberry$Seed" );
-		// 1.9.0
-		xyz.dlobi.utils.Bundle.addAlias( 
-			xyz.dlobi.pixeldungeoncoop.items.wands.WandOfReach.class,
-			"xyz.dlobi.pixeldungeoncoop.items.wands.WandOfTelekinesis" );
 	}
-	
+
 	@Override
 	protected void onCreate( Bundle savedInstanceState ) {
 		super.onCreate( savedInstanceState );

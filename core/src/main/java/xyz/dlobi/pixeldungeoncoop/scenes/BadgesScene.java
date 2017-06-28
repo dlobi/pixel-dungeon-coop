@@ -28,7 +28,7 @@ import xyz.dlobi.noosa.audio.Sample;
 import xyz.dlobi.noosa.ui.Button;
 import xyz.dlobi.pixeldungeoncoop.Assets;
 import xyz.dlobi.pixeldungeoncoop.Badges;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.effects.BadgeBanner;
 import xyz.dlobi.pixeldungeoncoop.ui.Archs;
 import xyz.dlobi.pixeldungeoncoop.ui.ExitButton;
@@ -58,8 +58,8 @@ public class BadgesScene extends PixelScene {
 		archs.setSize( w, h );
 		add( archs );
 		
-		int pw = (int)Math.min( w, (PixelDungeon.landscape() ? MIN_WIDTH_L : MIN_WIDTH_P) * 3 ) - 16;
-		int ph = (int)Math.min( h, (PixelDungeon.landscape() ? MIN_HEIGHT_L : MIN_HEIGHT_P) * 3 ) - 32;
+		int pw = (int)Math.min( w, (PixelDungeonCoop.landscape() ? MIN_WIDTH_L : MIN_WIDTH_P) * 3 ) - 16;
+		int ph = (int)Math.min( h, (PixelDungeonCoop.landscape() ? MIN_HEIGHT_L : MIN_HEIGHT_P) * 3 ) - 32;
 		
 		float size = (float)Math.sqrt( pw * ph / 27f );
 		int nCols = (int)Math.ceil( pw / size );
@@ -101,7 +101,7 @@ public class BadgesScene extends PixelScene {
 			@Override
 			public void call() {
 				if (Game.scene() == BadgesScene.this) {
-					PixelDungeon.switchNoFade( BadgesScene.class );
+					PixelDungeonCoop.switchNoFade( BadgesScene.class );
 				}
 			}
 		};
@@ -118,7 +118,7 @@ public class BadgesScene extends PixelScene {
 	
 	@Override
 	protected void onBackPressed() {
-		PixelDungeon.switchNoFade( TitleScene.class );
+		PixelDungeonCoop.switchNoFade( TitleScene.class );
 	}
 	
 	private static class BadgeButton extends Button {

@@ -33,7 +33,7 @@ import xyz.dlobi.pixeldungeoncoop.Badges;
 import xyz.dlobi.pixeldungeoncoop.Dungeon;
 import xyz.dlobi.pixeldungeoncoop.DungeonTilemap;
 import xyz.dlobi.pixeldungeoncoop.FogOfWar;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.Statistics;
 import xyz.dlobi.pixeldungeoncoop.actors.Actor;
 import xyz.dlobi.pixeldungeoncoop.actors.blobs.Blob;
@@ -119,10 +119,10 @@ public class GameScene extends PixelScene {
 		Music.INSTANCE.play( Assets.TUNE, true );
 		Music.INSTANCE.volume( 1f );
 		
-		PixelDungeon.lastClass( Dungeon.hero.heroClass.ordinal() );
+		PixelDungeonCoop.lastClass( Dungeon.hero.heroClass.ordinal() );
 		
 		super.create();
-		Camera.main.zoom( defaultZoom + PixelDungeon.zoom() );
+		Camera.main.zoom( defaultZoom + PixelDungeonCoop.zoom() );
 		
 		scene = this;
 
@@ -188,7 +188,7 @@ public class GameScene extends PixelScene {
 		fog.updateVisibility( Dungeon.visible, Dungeon.level.visited, Dungeon.level.mapped );
 		add( fog );
 		
-		brightness( PixelDungeon.brightness() );
+		brightness( PixelDungeonCoop.brightness() );
 		
 		spells = new Group();
 		add( spells );

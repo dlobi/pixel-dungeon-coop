@@ -20,7 +20,7 @@ package xyz.dlobi.pixeldungeoncoop.windows;
 import xyz.dlobi.noosa.Camera;
 import xyz.dlobi.noosa.audio.Sample;
 import xyz.dlobi.pixeldungeoncoop.Assets;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.scenes.PixelScene;
 import xyz.dlobi.pixeldungeoncoop.ui.CheckBox;
 import xyz.dlobi.pixeldungeoncoop.ui.RedButton;
@@ -93,22 +93,22 @@ public class WndSettings extends Window {
 				@Override
 				protected void onClick() {
 					super.onClick();
-					PixelDungeon.scaleUp( checked() );
+					PixelDungeonCoop.scaleUp( checked() );
 				}
 			};
 			btnScaleUp.setRect( 0, 0, WIDTH, BTN_HEIGHT );
-			btnScaleUp.checked( PixelDungeon.scaleUp() );
+			btnScaleUp.checked( PixelDungeonCoop.scaleUp() );
 			add( btnScaleUp );
 			
 			btnImmersive = new CheckBox( TXT_IMMERSIVE ) {
 				@Override
 				protected void onClick() {
 					super.onClick();
-					PixelDungeon.immerse( checked() );
+					PixelDungeonCoop.immerse( checked() );
 				}
 			};
 			btnImmersive.setRect( 0, btnScaleUp.bottom() + GAP, WIDTH, BTN_HEIGHT );
-			btnImmersive.checked( PixelDungeon.immersed() );
+			btnImmersive.checked( PixelDungeonCoop.immersed() );
 			btnImmersive.enable( android.os.Build.VERSION.SDK_INT >= 19 );
 			add( btnImmersive );
 			
@@ -118,23 +118,23 @@ public class WndSettings extends Window {
 			@Override
 			protected void onClick() {
 				super.onClick();
-				PixelDungeon.music( checked() );
+				PixelDungeonCoop.music( checked() );
 			}
 		};
 		btnMusic.setRect( 0, (btnImmersive != null ? btnImmersive.bottom() : BTN_HEIGHT) + GAP, WIDTH, BTN_HEIGHT );
-		btnMusic.checked( PixelDungeon.music() );
+		btnMusic.checked( PixelDungeonCoop.music() );
 		add( btnMusic );
 		
 		CheckBox btnSound = new CheckBox( TXT_SOUND ) {
 			@Override
 			protected void onClick() {
 				super.onClick();
-				PixelDungeon.soundFx( checked() );
+				PixelDungeonCoop.soundFx( checked() );
 				Sample.INSTANCE.play( Assets.SND_CLICK );
 			}
 		};
 		btnSound.setRect( 0, btnMusic.bottom() + GAP, WIDTH, BTN_HEIGHT );
-		btnSound.checked( PixelDungeon.soundFx() );
+		btnSound.checked( PixelDungeonCoop.soundFx() );
 		add( btnSound );
 		
 		if (inGame) {
@@ -143,11 +143,11 @@ public class WndSettings extends Window {
 				@Override
 				protected void onClick() {
 					super.onClick();
-					PixelDungeon.brightness( checked() );
+					PixelDungeonCoop.brightness( checked() );
 				}
 			};
 			btnBrightness.setRect( 0, btnSound.bottom() + GAP, WIDTH, BTN_HEIGHT );
-			btnBrightness.checked( PixelDungeon.brightness() );
+			btnBrightness.checked( PixelDungeonCoop.brightness() );
 			add( btnBrightness );
 			
 			CheckBox btnQuickslot = new CheckBox( TXT_QUICKSLOT ) {
@@ -168,7 +168,7 @@ public class WndSettings extends Window {
 			RedButton btnOrientation = new RedButton( orientationText() ) {
 				@Override
 				protected void onClick() {
-					PixelDungeon.landscape( !PixelDungeon.landscape() );
+					PixelDungeonCoop.landscape( !PixelDungeonCoop.landscape() );
 				}
 			};
 			btnOrientation.setRect( 0, btnSound.bottom() + GAP, WIDTH, BTN_HEIGHT );
@@ -182,7 +182,7 @@ public class WndSettings extends Window {
 	private void zoom( float value ) {
 
 		Camera.main.zoom( value );
-		PixelDungeon.zoom( (int)(value - PixelScene.defaultZoom) );
+		PixelDungeonCoop.zoom( (int)(value - PixelScene.defaultZoom) );
 
 		updateEnabled();
 	}
@@ -194,6 +194,6 @@ public class WndSettings extends Window {
 	}
 	
 	private String orientationText() {
-		return PixelDungeon.landscape() ? TXT_SWITCH_PORT : TXT_SWITCH_LAND;
+		return PixelDungeonCoop.landscape() ? TXT_SWITCH_PORT : TXT_SWITCH_LAND;
 	}
 }

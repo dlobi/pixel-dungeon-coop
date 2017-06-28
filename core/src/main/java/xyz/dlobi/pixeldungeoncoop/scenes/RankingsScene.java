@@ -24,7 +24,7 @@ import xyz.dlobi.noosa.Image;
 import xyz.dlobi.noosa.audio.Music;
 import xyz.dlobi.noosa.ui.Button;
 import xyz.dlobi.pixeldungeoncoop.Assets;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.Rankings;
 import xyz.dlobi.pixeldungeoncoop.effects.Flare;
 import xyz.dlobi.pixeldungeoncoop.sprites.ItemSprite;
@@ -76,7 +76,7 @@ public class RankingsScene extends PixelScene {
 		
 		if (Rankings.INSTANCE.records.size() > 0) {
 			
-			float rowHeight = PixelDungeon.landscape() ? ROW_HEIGHT_L : ROW_HEIGHT_P;
+			float rowHeight = PixelDungeonCoop.landscape() ? ROW_HEIGHT_L : ROW_HEIGHT_P;
 			
 			float left = (w - Math.min( MAX_ROW_WIDTH, w )) / 2 + GAP;
 			float top = align( (h - rowHeight  * Rankings.INSTANCE.records.size()) / 2 );
@@ -143,7 +143,7 @@ public class RankingsScene extends PixelScene {
 	
 	@Override
 	protected void onBackPressed() {
-		PixelDungeon.switchNoFade( TitleScene.class );
+		PixelDungeonCoop.switchNoFade( TitleScene.class );
 	}
 	
 	public static class Record extends Button {

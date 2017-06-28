@@ -21,7 +21,7 @@ import java.io.IOException;
 
 import xyz.dlobi.noosa.Game;
 import xyz.dlobi.pixeldungeoncoop.Dungeon;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.scenes.GameScene;
 import xyz.dlobi.pixeldungeoncoop.scenes.InterlevelScene;
 import xyz.dlobi.pixeldungeoncoop.scenes.RankingsScene;
@@ -75,7 +75,7 @@ public class WndGame extends Window {
 				@Override
 				protected void onClick() {
 					Dungeon.hero = null;
-					PixelDungeon.challenges( Dungeon.challenges );
+					PixelDungeonCoop.challenges( Dungeon.challenges );
 					InterlevelScene.mode = InterlevelScene.Mode.DESCEND;
 					InterlevelScene.noStory = true;
 					Game.switchScene( InterlevelScene.class );

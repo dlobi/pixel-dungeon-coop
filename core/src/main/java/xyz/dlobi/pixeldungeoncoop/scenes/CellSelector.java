@@ -20,7 +20,7 @@ package xyz.dlobi.pixeldungeoncoop.scenes;
 import xyz.dlobi.input.Touchscreen.Touch;
 import xyz.dlobi.noosa.TouchArea;
 import xyz.dlobi.pixeldungeoncoop.DungeonTilemap;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.utils.GameMath;
 import xyz.dlobi.utils.PointF;
 
@@ -100,7 +100,7 @@ public class CellSelector extends TouchArea {
 			
 			int zoom = Math.round( camera.zoom );
 			camera.zoom( zoom );
-			PixelDungeon.zoom( (int)(zoom - PixelScene.defaultZoom) );
+			PixelDungeonCoop.zoom( (int)(zoom - PixelScene.defaultZoom) );
 
 			dragging = true;
 			if (t == touch) {

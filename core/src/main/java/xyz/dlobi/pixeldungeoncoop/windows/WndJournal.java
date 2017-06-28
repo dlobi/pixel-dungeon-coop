@@ -24,7 +24,7 @@ import xyz.dlobi.noosa.Image;
 import xyz.dlobi.noosa.ui.Component;
 import xyz.dlobi.pixeldungeoncoop.Dungeon;
 import xyz.dlobi.pixeldungeoncoop.Journal;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.scenes.PixelScene;
 import xyz.dlobi.pixeldungeoncoop.ui.Icons;
 import xyz.dlobi.pixeldungeoncoop.ui.ScrollPane;
@@ -46,7 +46,7 @@ public class WndJournal extends Window {
 	public WndJournal() {
 		
 		super();
-		resize( WIDTH, PixelDungeon.landscape() ? HEIGHT_L : HEIGHT_P );
+		resize( WIDTH, PixelDungeonCoop.landscape() ? HEIGHT_L : HEIGHT_P );
 		
 		txtTitle = PixelScene.createText( TXT_TITLE, 9 );
 		txtTitle.hardlight( Window.TITLE_COLOR );

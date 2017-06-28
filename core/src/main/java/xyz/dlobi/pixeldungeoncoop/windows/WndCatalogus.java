@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 import xyz.dlobi.noosa.BitmapText;
 import xyz.dlobi.noosa.ui.Component;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.items.Item;
 import xyz.dlobi.pixeldungeoncoop.items.potions.Potion;
 import xyz.dlobi.pixeldungeoncoop.items.scrolls.Scroll;
@@ -59,7 +59,7 @@ public class WndCatalogus extends WndTabbed {
 		
 		super();
 		
-		if (PixelDungeon.landscape()) {
+		if (PixelDungeonCoop.landscape()) {
 			resize( WIDTH_L, HEIGHT_L );
 		} else {
 			resize( WIDTH_P, HEIGHT_P );

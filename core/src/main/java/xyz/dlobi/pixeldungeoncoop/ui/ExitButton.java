@@ -22,7 +22,7 @@ import xyz.dlobi.noosa.Image;
 import xyz.dlobi.noosa.audio.Sample;
 import xyz.dlobi.noosa.ui.Button;
 import xyz.dlobi.pixeldungeoncoop.Assets;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.scenes.TitleScene;
 
 public class ExitButton extends Button {
@@ -68,7 +68,7 @@ public class ExitButton extends Button {
 		if (Game.scene() instanceof TitleScene) {
 			Game.instance.finish();
 		} else {
-			PixelDungeon.switchNoFade( TitleScene.class );
+			PixelDungeonCoop.switchNoFade( TitleScene.class );
 		}
 	}
 }

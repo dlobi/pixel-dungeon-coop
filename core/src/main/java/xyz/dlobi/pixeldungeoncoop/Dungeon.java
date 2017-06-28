@@ -98,7 +98,7 @@ public class Dungeon {
 	
 	public static void init() {
 
-		challenges = PixelDungeon.challenges();
+		challenges = PixelDungeonCoop.challenges();
 		
 		Actor.clear();
 		

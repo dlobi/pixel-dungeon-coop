@@ -17,7 +17,7 @@
  */
 package xyz.dlobi.pixeldungeoncoop.windows;
 
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.actors.mobs.npcs.NPC;
 import xyz.dlobi.pixeldungeoncoop.ui.HighlightedText;
 import xyz.dlobi.pixeldungeoncoop.ui.RedButton;
@@ -36,7 +36,7 @@ public class WndQuest extends Window {
 		
 		super();
 		
-		int width = PixelDungeon.landscape() ? WIDTH_L : WIDTH_P;
+		int width = PixelDungeonCoop.landscape() ? WIDTH_L : WIDTH_P;
 		
 		IconTitle titlebar = new IconTitle( questgiver.sprite(), Utils.capitalize( questgiver.name ) );
 		titlebar.setRect( 0, 0, width, 0 );

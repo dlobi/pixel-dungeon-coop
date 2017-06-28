@@ -20,7 +20,7 @@ package xyz.dlobi.pixeldungeoncoop.actors.blobs;
 import java.util.Arrays;
 
 import xyz.dlobi.pixeldungeoncoop.Dungeon;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.actors.Actor;
 import xyz.dlobi.pixeldungeoncoop.effects.BlobEmitter;
 import xyz.dlobi.pixeldungeoncoop.levels.Level;
@@ -205,7 +205,7 @@ public class Blob extends Actor {
 			return gas;
 			
 		} catch (Exception e) {
-			PixelDungeon.reportException( e );
+			PixelDungeonCoop.reportException( e );
 			return null;
 		}
 	}

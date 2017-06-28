@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 import xyz.dlobi.noosa.BitmapText;
 import xyz.dlobi.pixeldungeoncoop.Challenges;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.scenes.PixelScene;
 import xyz.dlobi.pixeldungeoncoop.ui.CheckBox;
 import xyz.dlobi.pixeldungeoncoop.ui.Window;
@@ -83,7 +83,7 @@ public class WndChallenges extends Window {
 					value |= Challenges.MASKS[i];
 				}
 			}	
-			PixelDungeon.challenges( value );
+			PixelDungeonCoop.challenges( value );
 		}
 		
 		super.onBackPressed();

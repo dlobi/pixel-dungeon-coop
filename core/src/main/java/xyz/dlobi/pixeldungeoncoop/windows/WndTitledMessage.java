@@ -19,7 +19,7 @@ package xyz.dlobi.pixeldungeoncoop.windows;
 
 import xyz.dlobi.noosa.Image;
 import xyz.dlobi.noosa.ui.Component;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.ui.HighlightedText;
 import xyz.dlobi.pixeldungeoncoop.ui.Window;
 
@@ -40,7 +40,7 @@ public class WndTitledMessage extends Window {
 		
 		super();
 		
-		int width = PixelDungeon.landscape() ? WIDTH_L : WIDTH_P;
+		int width = PixelDungeonCoop.landscape() ? WIDTH_L : WIDTH_P;
 		
 		titlebar.setRect( 0, 0, width, 0 );
 		add( titlebar );

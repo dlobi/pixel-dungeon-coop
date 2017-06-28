@@ -26,7 +26,7 @@ import xyz.dlobi.noosa.Camera;
 import xyz.dlobi.noosa.Game;
 import xyz.dlobi.noosa.Image;
 import xyz.dlobi.noosa.TouchArea;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.effects.Flare;
 import xyz.dlobi.pixeldungeoncoop.ui.Archs;
 import xyz.dlobi.pixeldungeoncoop.ui.ExitButton;
@@ -94,6 +94,6 @@ public class AboutScene extends PixelScene {
 	
 	@Override
 	protected void onBackPressed() {
-		PixelDungeon.switchNoFade( TitleScene.class );
+		PixelDungeonCoop.switchNoFade( TitleScene.class );
 	}
 }

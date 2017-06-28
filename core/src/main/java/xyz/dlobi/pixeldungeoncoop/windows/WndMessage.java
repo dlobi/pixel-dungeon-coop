@@ -18,7 +18,7 @@
 package xyz.dlobi.pixeldungeoncoop.windows;
 
 import xyz.dlobi.noosa.BitmapTextMultiline;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.scenes.PixelScene;
 import xyz.dlobi.pixeldungeoncoop.ui.Window;
 
@@ -34,7 +34,7 @@ public class WndMessage extends Window {
 		super();
 		
 		BitmapTextMultiline info = PixelScene.createMultiline( text, 6 );
-		info.maxWidth = (PixelDungeon.landscape() ? WIDTH_L : WIDTH_P) - MARGIN * 2;
+		info.maxWidth = (PixelDungeonCoop.landscape() ? WIDTH_L : WIDTH_P) - MARGIN * 2;
 		info.measure();
 		info.x = info.y = MARGIN;
 		add( info );

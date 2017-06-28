@@ -26,7 +26,7 @@ import xyz.dlobi.noosa.Image;
 import xyz.dlobi.noosa.audio.Sample;
 import xyz.dlobi.pixeldungeoncoop.Assets;
 import xyz.dlobi.pixeldungeoncoop.Dungeon;
-import xyz.dlobi.pixeldungeoncoop.PixelDungeon;
+import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.actors.hero.Belongings;
 import xyz.dlobi.pixeldungeoncoop.actors.hero.Hero;
 import xyz.dlobi.pixeldungeoncoop.items.Gold;
@@ -100,7 +100,7 @@ public class WndBag extends WndTabbed {
 		lastMode = mode;
 		lastBag = bag;
 		
-		nCols = PixelDungeon.landscape() ? COLS_L : COLS_P;
+		nCols = PixelDungeonCoop.landscape() ? COLS_L : COLS_P;
 		nRows = (Belongings.BACKPACK_SIZE + 4 + 1) / nCols + ((Belongings.BACKPACK_SIZE + 4 + 1) % nCols > 0 ? 1 : 0);
 		
 		int slotsWidth = SLOT_SIZE * nCols + SLOT_MARGIN * (nCols - 1);
