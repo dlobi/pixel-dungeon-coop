@@ -101,7 +101,7 @@ public class TitleScene extends PixelScene {
 		DashboardItem btnPlay = new DashboardItem( TXT_PLAY, 0 ) {
 			@Override
 			protected void onClick() {
-				PixelDungeonCoop.switchNoFade( TitleScene.class );
+				PixelDungeonCoop.switchNoFade( LobbyScene.class );
 			}
 		};
 		add( btnPlay );
