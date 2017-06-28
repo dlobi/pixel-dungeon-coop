@@ -90,18 +90,10 @@ public class TitleScene extends PixelScene {
 		signs.y = title.y;
 		add( signs );
 		
-		DashboardItem btnBadges = new DashboardItem( TXT_BADGES, 3 ) {
-			@Override
-			protected void onClick() {
-				PixelDungeonCoop.switchNoFade( BadgesScene.class );
-			}
-		};
-		add( btnBadges );
-		
 		DashboardItem btnAbout = new DashboardItem( TXT_ABOUT, 1 ) {
 			@Override
 			protected void onClick() {
-				PixelDungeonCoop.switchNoFade( AboutScene.class );
+				PixelDungeonCoop.switchNoFade( TitleScene.class );
 			}
 		};
 		add( btnAbout );
@@ -109,30 +101,19 @@ public class TitleScene extends PixelScene {
 		DashboardItem btnPlay = new DashboardItem( TXT_PLAY, 0 ) {
 			@Override
 			protected void onClick() {
-				PixelDungeonCoop.switchNoFade( StartScene.class );
+				PixelDungeonCoop.switchNoFade( TitleScene.class );
 			}
 		};
 		add( btnPlay );
 		
-		DashboardItem btnHighscores = new DashboardItem( TXT_HIGHSCORES, 2 ) {
-			@Override
-			protected void onClick() {
-				PixelDungeonCoop.switchNoFade( RankingsScene.class );
-			}
-		};
-		add( btnHighscores );
-		
 		if (PixelDungeonCoop.landscape()) {
 			float y = (h + height) / 2 - DashboardItem.SIZE;
-			btnHighscores	.setPos( w / 2 - btnHighscores.width(), y );
-			btnBadges		.setPos( w / 2, y );
-			btnPlay			.setPos( btnHighscores.left() - btnPlay.width(), y );
-			btnAbout		.setPos( btnBadges.right(), y );
+			btnPlay			.setPos( w / 2 - btnPlay.width(), y );
+			btnAbout		.setPos( w / 2, y );
 		} else {
-			btnBadges.setPos( w / 2 - btnBadges.width(), (h + height) / 2 - DashboardItem.SIZE );
-			btnAbout.setPos( w / 2, (h + height) / 2 - DashboardItem.SIZE );
-			btnPlay.setPos( w / 2 - btnPlay.width(), btnAbout.top() - DashboardItem.SIZE );
-			btnHighscores.setPos( w / 2, btnPlay.top() );
+			float y = (h + height) / 2 - DashboardItem.SIZE;
+			btnPlay			.setPos( w / 2 - btnPlay.width(), y );
+			btnAbout		.setPos( w / 2, y );
 		}
 		
 		BitmapText version = new BitmapText( "v " + Game.version, font1x );
