@@ -4,6 +4,7 @@ import xyz.dlobi.input.Touchscreen;
 import xyz.dlobi.noosa.TouchArea;
 import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
 import xyz.dlobi.pixeldungeoncoop.scenes.PixelScene;
+import xyz.dlobi.pixeldungeoncoop.scenes.TitleScene;
 
 public class WndLobby extends WndTabbed {
 
@@ -41,5 +42,10 @@ public class WndLobby extends WndTabbed {
         for (Tab tab : tabs) {
             tab.setSize( 40, 25 );
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        PixelDungeonCoop.switchNoFade(TitleScene.class);
     }
 }
