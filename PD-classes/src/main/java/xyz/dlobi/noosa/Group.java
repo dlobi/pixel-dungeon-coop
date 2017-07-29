@@ -118,6 +118,7 @@ public class Group extends Gizmo {
 		members.add( g );
 		g.parent = this;
 		length++;
+		g.onAdded();
 		return g;
 	}
 	
@@ -148,6 +149,7 @@ public class Group extends Gizmo {
 		members.add( g );
 		g.parent = this;
 		length++;
+		g.onAdded();
 		return g;
 	}
 	
@@ -171,6 +173,7 @@ public class Group extends Gizmo {
 		members.add( 0, g );
 		g.parent = this;
 		length++;
+		g.onAdded();
 		return g;
 	}
 	

@@ -38,6 +38,9 @@ public class Gizmo {
 		active	= true;
 		visible	= true;
 	}
+
+	public void onAdded() {
+	}
 	
 	public void destroy() {
 		parent = null;
