@@ -21,6 +21,8 @@
 
 package xyz.dlobi.noosa;
 
+import android.util.Log;
+
 public class Gizmo {
 	
 	public boolean exists;
@@ -40,6 +42,7 @@ public class Gizmo {
 	}
 
 	public void onAdded() {
+		Log.d("PDCOOP", this.toString() + " " + " added to " + this.parent.toString());
 	}
 	
 	public void destroy() {
