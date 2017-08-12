@@ -34,6 +34,7 @@ public class TextInput extends Component {
                 textBox.setTypeface(RenderedText.getFont());
                 textBox.setFilters(new InputFilter[]{
                         new InputFilter.LengthFilter(maxLength)});
+                textBox.setTypeface( RenderedText.getFont() );
                 textBox.setInputType(InputType.TYPE_CLASS_TEXT |
                         InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
 
@@ -75,7 +76,7 @@ public class TextInput extends Component {
                 Camera camera = camera();
                 if (camera == null) {
                     // If not added to a parent Gizmo yet, use default camera
-                    camera = Camera.main.camera;
+                    camera = Camera.main;
                 }
 
                 final float scaledZoom = camera.zoom * (PixelDungeonCoop.dispWidth /
