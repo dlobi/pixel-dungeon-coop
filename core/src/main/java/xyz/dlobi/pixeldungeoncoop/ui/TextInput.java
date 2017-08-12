@@ -17,6 +17,7 @@ import xyz.dlobi.noosa.Camera;
 import xyz.dlobi.noosa.RenderedText;
 import xyz.dlobi.noosa.ui.Component;
 import xyz.dlobi.pixeldungeoncoop.PixelDungeonCoop;
+import xyz.dlobi.utils.Point;
 
 import static android.R.attr.maxLength;
 
@@ -79,8 +80,8 @@ public class TextInput extends Component {
                     camera = Camera.main;
                 }
 
-                final float scaledZoom = camera.zoom * (PixelDungeonCoop.dispWidth /
-                        (float) PixelDungeonCoop.width);
+                final float ratio = PixelDungeonCoop.dispWidth / (float) PixelDungeonCoop.width;
+                final float scaledZoom = camera.zoom * ratio;
 
                 textBox.setTextSize(TypedValue.COMPLEX_UNIT_PX, 9 * scaledZoom);
 
@@ -88,10 +89,15 @@ public class TextInput extends Component {
                         (int)(width*scaledZoom),
                         (int)((height)*scaledZoom),
                         Gravity.START | Gravity.TOP);
-                layout.setMargins((int)(x*scaledZoom), (int)(y*scaledZoom), 0, 0);
+                Point cameraPos = camera.cameraToScreen(0, 0);
+                layout.setMargins((int)(x*scaledZoom + cameraPos.x*ratio), (int)(y*scaledZoom + cameraPos.y*ratio), 0, 0);
                 textBox.setLayoutParams(layout);
             }
         });
+    }
+
+    public String getText(){
+        return textBox.getText().toString().trim();
     }
 
     protected void onSelect(boolean positive ) {};
