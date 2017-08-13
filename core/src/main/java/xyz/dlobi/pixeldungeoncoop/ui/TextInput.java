@@ -83,7 +83,7 @@ public class TextInput extends Component {
                 final float ratio = PixelDungeonCoop.dispWidth / (float) PixelDungeonCoop.width;
                 final float scaledZoom = camera.zoom * ratio;
 
-                textBox.setTextSize(TypedValue.COMPLEX_UNIT_PX, 9 * scaledZoom);
+                textBox.setTextSize(TypedValue.COMPLEX_UNIT_PX, 8 * scaledZoom);
 
                 FrameLayout.LayoutParams layout = new FrameLayout.LayoutParams(
                         (int)(width*scaledZoom),
